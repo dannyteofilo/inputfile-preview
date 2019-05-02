@@ -1,0 +1,10 @@
+.modal-preview-img {
+    width: 500px;
+    height: 400px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
