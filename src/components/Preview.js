@@ -12,10 +12,14 @@ class Preview extends Component {
         this.chooseFile = this.chooseFile.bind(this);
     }
     chooseFile(e) {
-        this.setState({ file: e.target.files[0] })
+        this.setState({
+            ...this.state,
+            file: e.target.files[0] 
+        })
     }
     render() {
         const { file } = this.state
+        console.log('State main: ',this.state);
         return (
             <div className="container">
                 <label className="fileContainer">
@@ -24,7 +28,7 @@ class Preview extends Component {
                 </label>
                 {
                     file &&
-                    <Modal file={file} />
+                    <Modal data={this.state.file} />
                 }
             </div>
         )
